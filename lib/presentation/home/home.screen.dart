@@ -290,16 +290,6 @@ class RecuerdoRomantico extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 6),
-                    Text(
-                      descripcion ?? "",
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.85),
-                        fontSize: 13,
-                        height: 1.3,
-                      ),
-                    ),
                   ],
                 ),
               ),

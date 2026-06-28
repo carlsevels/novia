@@ -19,7 +19,7 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
   final evento = <Detalles>[
     Detalles(
       mesAniversario: false,
-      isFavorite: true,
+      isFavorite: false,
       portada: 'assets/images/imagen 3.jpeg',
       isVideo: false,
       fecha: "12 de Marzo del 2026",
@@ -44,7 +44,7 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
         ]),
     Detalles(
         mesAniversario: false,
-        isFavorite: true,
+        isFavorite: false,
         portada: "assets/images/marco2.jpeg",
         isVideo: false,
         cancion: "audios/caroline.mp3",
@@ -62,7 +62,7 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
         ]),
     Detalles(
         mesAniversario: false,
-        isFavorite: true,
+        isFavorite: false,
         cancion: "audios/247.mp3",
         portada: "assets/images/ajolote3.jpeg",
         isVideo: false,
@@ -96,7 +96,7 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
         ]),
     Detalles(
         mesAniversario: false,
-        isFavorite: true,
+        isFavorite: false,
         portada: "assets/images/pulseras3.jpeg",
         isVideo: false,
         cancion: "audios/milagro.mp3",
@@ -113,7 +113,7 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
         ]),
     Detalles(
         mesAniversario: true,
-        isFavorite: true,
+        isFavorite: false,
         portada: "assets/images/novios3.jpeg",
         isVideo: false,
         fecha: "05 de Mayo del 2026",
@@ -130,7 +130,7 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
         ]),
     Detalles(
         mesAniversario: false,
-        isFavorite: true,
+        isFavorite: false,
         portada: "assets/images/cine2.jpeg",
         isVideo: false,
         fecha: "15 de Mayo del 2026",
@@ -145,7 +145,7 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
         ]),
     Detalles(
         mesAniversario: false,
-        isFavorite: true,
+        isFavorite: false,
         portada: "assets/images/potter2.jpeg",
         isVideo: false,
         fecha: "16 de Mayo del 2026",
@@ -162,7 +162,7 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
         ]),
     Detalles(
         mesAniversario: false,
-        isFavorite: true,
+        isFavorite: false,
         portada: "assets/images/catrinas.jpeg",
         isVideo: false,
         fecha: "31 de Mayo del 2026",
@@ -192,7 +192,7 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
         ]),
     Detalles(
         mesAniversario: false,
-        isFavorite: true,
+        isFavorite: false,
         portada: "assets/images/gfirme.jpeg",
         isVideo: false,
         fecha: "25 de Junio del 2026",

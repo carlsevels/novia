@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "novia-08"
-  }
+  },
+  "targets": {
+    "novia-08": {
+      "hosting": {
+        "nueva-web": [
+          "novia-08"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

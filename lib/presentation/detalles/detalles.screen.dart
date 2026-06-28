@@ -220,13 +220,10 @@ class DetallesScreen extends GetView<DetallesController> {
                                           child: Stack(
                                             fit: StackFit.expand,
                                             children: [
-                                              esVideo
-                                                  ? VideoThumbnailWidget(
-                                                      path: path)
-                                                  : Image.asset(
-                                                      path,
-                                                      fit: BoxFit.cover,
-                                                    ),
+                                              Image.asset(
+                                                path,
+                                                fit: BoxFit.cover,
+                                              ),
                                               if (esVideo)
                                                 Container(
                                                   color: Colors.black26,
@@ -557,64 +554,6 @@ class _PantallaVideoState extends State<PantallaVideo> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class VideoThumbnailWidget extends StatefulWidget {
-  final String path;
-
-  const VideoThumbnailWidget({
-    super.key,
-    required this.path,
-  });
-
-  @override
-  State<VideoThumbnailWidget> createState() => _VideoThumbnailWidgetState();
-}
-
-class _VideoThumbnailWidgetState extends State<VideoThumbnailWidget> {
-  Uint8List? thumbnail;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadThumbnail();
-  }
-
-  Future<void> _loadThumbnail() async {
-    final bytes = await VideoThumbnail.thumbnailData(
-      video: widget.path,
-      imageFormat: ImageFormat.JPEG,
-      maxWidth: 300,
-      quality: 75,
-    );
-
-    if (mounted) {
-      setState(() {
-        thumbnail = bytes;
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (thumbnail == null) {
-      return Container(
-        width: 120,
-        height: 120,
-        color: CupertinoColors.systemGrey5,
-        child: const Center(
-          child: CupertinoActivityIndicator(),
-        ),
-      );
-    }
-
-    return Image.memory(
-      thumbnail!,
-      width: 120,
-      height: 120,
-      fit: BoxFit.cover,
     );
   }
 }

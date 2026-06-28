@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:alecita/infrastructure/navigation/bindings/controllers/detalles.controller.binding.dart';
+import 'package:alecita/presentation/detalles/controllers/detalles.controller.dart';
 import 'package:alecita/presentation/screens.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -130,10 +131,12 @@ class RecuerdoRomantico extends StatelessWidget {
             listaImagenes: evento.listaImagenes,
             portada: evento.portada,
           ),
-          binding: DetallesControllerBinding(
-            mesAniversario: evento.mesAniversario ?? false,
-            eventoActual: evento,
-          ),
+          binding: BindingsBuilder(() {
+            Get.put(DetallesController(
+              mesAniversario: evento.mesAniversario ?? false,
+              eventoActual: evento,
+            ));
+          }),
         );
       },
       child: AnimatedContainer(
@@ -165,11 +168,16 @@ class RecuerdoRomantico extends StatelessWidget {
             children: [
               // IMAGEN
               Positioned.fill(
-                child: Image.asset(
-                  path,
-                  fit: BoxFit.cover,
-                ),
-              ),
+                  child: Image.asset(
+                path,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    color: Colors.grey[300],
+                    child: const Icon(Icons.image_not_supported),
+                  );
+                },
+              )),
 
               // GRADIENTE ESPECIAL
               Positioned.fill(

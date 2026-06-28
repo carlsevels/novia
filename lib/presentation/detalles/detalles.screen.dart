@@ -52,6 +52,13 @@ class DetallesScreen extends GetView<DetallesController> {
                               Image.asset(
                                 portada!,
                                 fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    color: Colors.grey[300],
+                                    child:
+                                        const Icon(Icons.image_not_supported),
+                                  );
+                                },
                               ),
 
                             /// gradiente cinematográfico
@@ -223,6 +230,14 @@ class DetallesScreen extends GetView<DetallesController> {
                                               Image.asset(
                                                 path,
                                                 fit: BoxFit.cover,
+                                                errorBuilder: (context, error,
+                                                    stackTrace) {
+                                                  return Container(
+                                                    color: Colors.grey[300],
+                                                    child: const Icon(Icons
+                                                        .image_not_supported),
+                                                  );
+                                                },
                                               ),
                                               if (esVideo)
                                                 Container(
@@ -346,7 +361,17 @@ class PantallaImagen extends StatelessWidget {
           InteractiveViewer(
             minScale: 1.0,
             maxScale: 4.0,
-            child: Center(child: Image.asset(path)),
+            child: Center(
+                child: Image.asset(
+              path,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  color: Colors.grey[300],
+                  child: const Icon(Icons.image_not_supported),
+                );
+              },
+            )),
           ),
           // Botón cerrar minimalista
           Positioned(

@@ -1,10 +1,10 @@
 # Flutter
 .dart_tool/
-.packages
+build/
 .flutter-plugins
 .flutter-plugins-dependencies
+.packages
 .pub/
-build/
 
 # Android
 android/.gradle/
@@ -14,9 +14,9 @@ android/local.properties
 ios/Pods/
 ios/.symlinks/
 
+# macOS
+.DS_Store
+
 # IDE
 .idea/
 .vscode/
-
-# macOS
-.DS_Store

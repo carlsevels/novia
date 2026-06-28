@@ -29,7 +29,6 @@ class HomeScreen extends GetView<HomeController> {
                 children: [
                   const SizedBox(height: 10),
 
-                  /// 💌 INTRO MEJOR PRESENTADO (sin cambiar colores/tamaño)
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Container(
@@ -41,7 +40,7 @@ class HomeScreen extends GetView<HomeController> {
                         ),
                       ),
                       child: const Text(
-                        "Hola mi amor, te hice estos recuerditos y si entras a un recuerdo verás una opinion mía, espero que te guste!",
+                        "Hola mi amor, te hice estos recuerditos y si entras a un recuerdo verás una opinion mía, espero que te guste mucho!",
                         style: TextStyle(color: CupertinoColors.black),
                       ),
                     ),

@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:alecita/infrastructure/navigation/bindings/controllers/detalles.controller.binding.dart';
 import 'package:alecita/presentation/detalles/controllers/detalles.controller.dart';
 import 'package:alecita/presentation/screens.dart';
 import 'package:flutter/cupertino.dart';
@@ -40,7 +39,7 @@ class HomeScreen extends GetView<HomeController> {
                         ),
                       ),
                       child: const Text(
-                        "Hola mi amor, te hice estos recuerditos y si entras a un recuerdo verás una opinion mía, espero que te guste mucho!",
+                        "Hola mi amor, te hice estos recuerditos y si entras a un recuerdo verás una opinion mía, espero que te guste mucho muchooo!",
                         style: TextStyle(color: CupertinoColors.black),
                       ),
                     ),

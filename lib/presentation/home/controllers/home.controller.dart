@@ -11,16 +11,16 @@ class HomeController extends GetxController with StateMixin<List<EventoMedio>> {
   late ConfettiController controllerCenter;
 
   final header = <EventoMedio>[
-    EventoMedio(path: 'assets/images/imagen 2.jpeg', isVideo: false),
-    EventoMedio(path: 'assets/images/imagen 3.jpeg', isVideo: false),
-    EventoMedio(path: 'assets/images/imagen 4.jpeg', isVideo: false),
+    EventoMedio(path: 'assets/images/imagen2.jpeg', isVideo: false),
+    EventoMedio(path: 'assets/images/imagen3.jpeg', isVideo: false),
+    EventoMedio(path: 'assets/images/imagen4.jpeg', isVideo: false),
   ].obs;
 
   final evento = <Detalles>[
     Detalles(
       mesAniversario: false,
       isFavorite: false,
-      portada: 'assets/images/imagen 3.jpeg',
+      portada: 'assets/images/imagen3.jpeg',
       isVideo: false,
       fecha: "12 de Marzo del 2026",
       descripcionCorta: "Esta es la primer foto que te tomé <3",

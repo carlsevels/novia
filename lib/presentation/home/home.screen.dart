@@ -122,20 +122,17 @@ class RecuerdoRomantico extends StatelessWidget {
       borderRadius: BorderRadius.circular(26),
       onTap: () {
         Get.to(
-          () => DetallesScreen(
-            mesAniversario: evento.mesAniversario,
-            esFavorito: evento.isFavorite,
-            descripcionCorta: evento.descripcionCorta,
-            descripcionLarga: evento.descripcionLarga,
-            fecha: evento.fecha,
-            listaImagenes: evento.listaImagenes,
-            portada: evento.portada,
-          ),
+          () => DetallesScreen(),
+          arguments: evento,
           binding: BindingsBuilder(() {
-            Get.put(DetallesController(
-              mesAniversario: evento.mesAniversario ?? false,
-              eventoActual: evento,
-            ));
+            // Aquí le decimos a GetX: "Cuando abras DetallesScreen,
+            // crea esta instancia de DetallesController y guárdala"
+            Get.put(
+              DetallesController(
+                mesAniversario: evento.mesAniversario ?? false,
+                eventoActual: evento,
+              ),
+            );
           }),
         );
       },

@@ -3,36 +3,20 @@ import 'package:alecita/presentation/home/controllers/home.controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
-import 'dart:typed_data';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
-import 'package:video_thumbnail/video_thumbnail.dart';
 
 class DetallesScreen extends GetView<DetallesController> {
-  final String? descripcionCorta;
-  final String? descripcionLarga;
-  final String? fecha;
-  final String? portada;
-  final List<EventoMedio>? listaImagenes;
-  final bool? esFavorito;
-  final bool? mesAniversario;
-
-  const DetallesScreen({
+  DetallesScreen({
     super.key,
-    this.descripcionCorta,
-    this.descripcionLarga,
-    this.fecha,
-    this.portada,
-    this.listaImagenes,
-    this.esFavorito,
-    this.mesAniversario,
   });
+  final evento = Get.arguments as Detalles;
   @override
   Widget build(BuildContext context) {
     return controller.obx((state) {
       return CupertinoPageScaffold(
         backgroundColor:
-            mesAniversario == true ? Colors.green[100] : Colors.white,
+            evento.mesAniversario == true ? Colors.green[100] : Colors.white,
         child: Stack(
           children: [
             CustomScrollView(
@@ -48,9 +32,9 @@ class DetallesScreen extends GetView<DetallesController> {
                         child: Stack(
                           fit: StackFit.expand,
                           children: [
-                            if (portada != null)
+                            if (evento.portada != null)
                               Image.asset(
-                                portada!,
+                                evento.portada!,
                                 fit: BoxFit.cover,
                                 errorBuilder: (context, error, stackTrace) {
                                   return Container(
@@ -85,7 +69,7 @@ class DetallesScreen extends GetView<DetallesController> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    fecha?.toUpperCase() ?? "",
+                                    evento.fecha?.toUpperCase() ?? "",
                                     style: const TextStyle(
                                       color: Colors.white70,
                                       fontSize: 11,
@@ -94,7 +78,7 @@ class DetallesScreen extends GetView<DetallesController> {
                                   ),
                                   const SizedBox(height: 10),
                                   Text(
-                                    descripcionCorta ?? "",
+                                    evento.descripcionCorta ?? "",
                                     style: const TextStyle(
                                       fontSize: 34,
                                       fontWeight: FontWeight.bold,
@@ -128,7 +112,7 @@ class DetallesScreen extends GetView<DetallesController> {
                           children: [
                             Row(
                               children: [
-                                if (esFavorito ?? false)
+                                if (evento.isFavorite ?? false)
                                   Positioned(
                                     top: 50,
                                     right: 20,
@@ -148,7 +132,7 @@ class DetallesScreen extends GetView<DetallesController> {
                                 SizedBox(
                                   width: 8.0,
                                 ),
-                                if (esFavorito ?? false)
+                                if (evento.isFavorite ?? false)
                                   Container(
                                     padding: const EdgeInsets.symmetric(
                                       horizontal: 12,
@@ -172,10 +156,10 @@ class DetallesScreen extends GetView<DetallesController> {
 
                             const SizedBox(height: 20),
 
-                            if (descripcionLarga != null &&
-                                descripcionLarga!.isNotEmpty)
+                            if (evento.descripcionLarga != null &&
+                                evento.descripcionLarga!.isNotEmpty)
                               Text(
-                                descripcionLarga!,
+                                evento.descripcionLarga!,
                                 style: TextStyle(
                                   fontSize: 16,
                                   height: 1.7,
@@ -186,8 +170,8 @@ class DetallesScreen extends GetView<DetallesController> {
                             const SizedBox(height: 26),
 
                             /// ================= GALERÍA =================
-                            if (listaImagenes != null &&
-                                listaImagenes!.isNotEmpty) ...[
+                            if (evento.listaImagenes != null &&
+                                evento.listaImagenes!.isNotEmpty) ...[
                               const Text(
                                 "Momentos juntos",
                                 style: TextStyle(
@@ -201,9 +185,10 @@ class DetallesScreen extends GetView<DetallesController> {
                                 height: 140,
                                 child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
-                                  itemCount: listaImagenes!.length,
+                                  itemCount: evento.listaImagenes!.length,
                                   itemBuilder: (context, index) {
-                                    final path = listaImagenes![index].path;
+                                    final path =
+                                        evento.listaImagenes![index].path;
                                     final esVideo =
                                         path.toLowerCase().endsWith('.mp4');
 

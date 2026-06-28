@@ -31,10 +31,9 @@ class Nav {
       page: () => const HomeScreen(),
       binding: HomeControllerBinding(),
     ),
-
     GetPage(
       name: Routes.DETALLES,
-      page: () => const DetallesScreen(),
+      page: () => DetallesScreen(),
     ),
   ];
 }

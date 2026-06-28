@@ -19,6 +19,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetCupertinoApp(
       // O CupertinoApp
+      debugShowCheckedModeBanner: false,
       theme: const CupertinoThemeData(
         brightness: Brightness.light,
       ),

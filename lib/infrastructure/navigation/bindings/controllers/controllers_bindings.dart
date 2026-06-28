@@ -1,0 +1,2 @@
+export 'package:alecita/infrastructure/navigation/bindings/controllers/detalles.controller.binding.dart'; 
+export 'package:alecita/infrastructure/navigation/bindings/controllers/home.controller.binding.dart'; 

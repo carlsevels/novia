@@ -129,50 +129,6 @@ class DetallesScreen extends GetView<DetallesController> {
                                       ),
                                     ),
                                   ),
-                                SizedBox(
-                                  width: 8.0,
-                                ),
-                                Row(
-                                  children: [
-                                    // 1. Icono de favorito (sin Positioned)
-                                    if (evento.isFavorite ?? false)
-                                      Container(
-                                        margin: const EdgeInsets.only(
-                                            right:
-                                                8), // Usamos margen en lugar de posición
-                                        padding: const EdgeInsets.all(10),
-                                        decoration: BoxDecoration(
-                                          color: Colors.black.withOpacity(0.25),
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: const Icon(
-                                          CupertinoIcons.heart_fill,
-                                          color: Colors.redAccent,
-                                          size: 20,
-                                        ),
-                                      ),
-
-                                    // 2. Etiqueta "Favoritos" (tu código original)
-                                    if (evento.isFavorite ?? false)
-                                      Container(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 12, vertical: 6),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(30),
-                                          color: Colors.red,
-                                        ),
-                                        child: const Text(
-                                          "Favoritos",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 12,
-                                            letterSpacing: 1.2,
-                                          ),
-                                        ),
-                                      ),
-                                  ],
-                                ),
                               ],
                             ),
 
